@@ -4,8 +4,14 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+	<bean class="com.natickweb.spring.BeanB" id="beanB" />
+
+
 	<bean class="com.natickweb.spring.BeanA">
-		<property name="age" value="23"></property>
+		
+		<property name="beanb" ref="beanB">
+		</property>
+		<property name="age" value="23"/>	
 	</bean>
 
 
