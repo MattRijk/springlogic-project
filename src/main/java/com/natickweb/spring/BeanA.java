@@ -3,26 +3,26 @@ package com.natickweb.spring;
 
 public class BeanA {
 
-	private int age;
-	private BeanB beanb;
+	private String prop1;
+	private BeanB beanB;
 
-
-	public BeanB getBeanb() {
-		return beanb;
+	public void setBeanB(BeanB beanB) {
+		this.beanB = beanB;
 	}
 	
-	public void setAge(int age) {
-		System.out.println("Setting the age value using the setter");
-		this.age = age;
+	public BeanB getBeanB() {
+		return beanB;
 	}
 	
-	public int getAge() {
-		return age;
+	public void setProp1(String prop1) {
+		this.prop1 = prop1;
+	}
+	
+	public String getProp1() {
+		return prop1;
 	}
 
-	public void setBeanb(BeanB beanb) {
-		this.beanb = beanb;
-	}
+	
 	
 	
 	

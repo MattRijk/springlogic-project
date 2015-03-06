@@ -6,13 +6,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Application {
 
 	public static void main(String[] args) {
-		
-		ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
-		
+
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"application-context.xml");
+
 		BeanA beanA = context.getBean(BeanA.class);
-		beanA.getBeanb().execute();
+		System.out.println(beanA.getProp1());
+		beanA.getBeanB().execute();
 		
-		
+
 	}
 
 }
