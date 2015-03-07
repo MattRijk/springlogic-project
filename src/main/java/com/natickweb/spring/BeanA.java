@@ -1,29 +1,32 @@
 package com.natickweb.spring;
 
 
+
+
+import java.util.GregorianCalendar;
+
+
 public class BeanA {
 
-	private String prop1;
-	private BeanB beanB;
 
-	public void setBeanB(BeanB beanB) {
-		this.beanB = beanB;
+	private GregorianCalendar calendar;
+	
+	public BeanA(GregorianCalendar calendar){
+		this.calendar = calendar;
 	}
 	
-	public BeanB getBeanB() {
-		return beanB;
+	public int getMonth() {
+		return this.calendar.MONTH + 1;
+		
 	}
-	
-	public void setProp1(String prop1) {
-		this.prop1 = prop1;
+	public int getDay() {
+		return this.calendar.get(GregorianCalendar.DAY_OF_MONTH);
+		
 	}
-	
-	public String getProp1() {
-		return prop1;
+	public int getYear() {
+		return this.calendar.get(GregorianCalendar.YEAR);
+		
 	}
-
-	
-	
 	
 	
 	

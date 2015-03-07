@@ -10,9 +10,11 @@ public class Application {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"application-context.xml");
 
-		BeanA beanA = context.getBean(BeanA.class);
-		System.out.println(beanA.getProp1());
-		beanA.getBeanB().execute();
+		BeanA beanA = context.getBean("beanA", BeanA.class);
+		
+		System.out.print(beanA.getMonth() + "/");
+		System.out.print(beanA.getDay() + "/");
+		System.out.println(beanA.getYear());
 		
 
 	}

@@ -5,8 +5,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="beanB" class="com.natickweb.spring.BeanB" c:_0="Test" />
 
-	<bean class="com.natickweb.spring.BeanA" p:prop1="23" p:beanB-ref="beanB" />
 
+	<bean class="com.natickweb.spring.BeanA" id="beanA">
+		<constructor-arg >
+			<bean class="java.util.Calendar" factory-method="getInstance" />
+		</constructor-arg>
+	</bean>
 </beans>
