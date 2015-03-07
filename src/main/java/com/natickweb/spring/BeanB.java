@@ -7,6 +7,10 @@ public class BeanB {
 		this.value = value2;
 	}
 
+	public BeanB() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void execute() {
 		System.out.println("In Bean B");
 		System.out.println(value);

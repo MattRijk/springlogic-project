@@ -16,7 +16,7 @@ public class Application {
 		System.out.print(beanA.getDay() + "/");
 		System.out.println(beanA.getYear());
 		
-
+		BeanB beanB = context.getBean("beanB", BeanB.class);
 	}
 
 }
