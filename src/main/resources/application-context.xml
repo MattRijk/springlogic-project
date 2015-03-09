@@ -7,15 +7,10 @@
 
 
 
-	<bean id="calendarBean" class="java.util.Calendar" factory-method="getInstance" />
-	<bean class="com.natickweb.spring.BeanA" id="beanA">
-		<constructor-arg ref="calendarBean"/>   
-	</bean>
+	<!-- Singleton -->
+	<bean class="com.natickweb.spring.Singleton" scope="singleton"/>
 	
-	<bean id="customFactory" class="com.natickweb.spring.CustomFactory"/>
+	<!-- Prototype Scope -->
+	<bean class="com.natickweb.spring.Prototype" scope="prototype"></bean>
 	
-	<bean class="com.natickweb.spring.BeanB"
-		factory-bean="customFactory" factory-method="getBeanBInstance"
-		id="beanB">
-	</bean>
 </beans>
