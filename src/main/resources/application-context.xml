@@ -5,15 +5,38 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<!-- Prototype Scope -->
-	<bean class="com.natickweb.spring.Prototype" scope="prototype"
-		id="prototype">
-	</bean>
+	<bean id="bean" class="com.natickweb.spring.Bean">
+		<property name="list">
+		<!-- 	<list>
+				<value>Mary</value>
+				<value>Sam</value>
+				<value>Bob</value>
+				<value>Jack</value>
+			</list> -->
+			<list>
+				<bean class="com.natickweb.spring.ObjectA"></bean>
+			</list>
+		</property>
 
-	<!-- Singleton -->
-	<bean class="com.natickweb.spring.Singleton" scope="singleton"
-		id="singleton">
-		<property name="prototype" ref="prototype" />
+		<property name="set">
+			<set>
+				<value>Mary</value>
+				<value>Sam</value>
+				<value>Bob</value>				
+			</set>
+		</property>
+		<property name="map">
+			<map>
+				<entry key="a" value="Apple"/>
+				<entry key="b" value="Ball"/>
+				<entry key="c" value="Cake"/>
+			</map>
+		</property>
+		<property name="properties">
+		<props>
+			<prop key="a">Apple</prop>
+			<prop key="b">Ball</prop>
+		</props>
+		</property>
 	</bean>
-
 </beans>

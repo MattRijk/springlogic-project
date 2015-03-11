@@ -9,13 +9,24 @@ public class Application {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"application-context.xml");
-
 		
-		Singleton singleton = context.getBean("singleton", Singleton.class);
-		Prototype prototype1 = singleton.createPrototype();
-		Prototype prototype2 = singleton.createPrototype();
+	    Bean bean = context.getBean("bean", Bean.class);
+		for(ObjectA token : bean.getList()) {
+			System.out.println(token);
+		}
 		
-		System.out.println((prototype1 == prototype2) ? "Same Instance":"Separate Instances");
+		System.out.println("\nPrinting Set:");
+		for(String token : bean.getSet()) {
+			System.out.println(token);
+		}
+		System.out.println("\nPrinting Map:");
+		for(String token : bean.getMap().values()) {
+			System.out.println(token);
+		}
+		System.out.println("\nPrinting Properties:");
+		for(Object key : bean.getProperties().keySet()) {
+			System.out.println(bean.getProperties().getProperty((String)key));
+		}
 	}
 
 }
