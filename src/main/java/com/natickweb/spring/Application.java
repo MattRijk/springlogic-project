@@ -10,10 +10,12 @@ public class Application {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"application-context.xml");
 
-		Prototype proto = context.getBean("prototype", Prototype.class);
-		Prototype proto2 = context.getBean("prototype", Prototype.class);
 		
-		System.out.println(proto == proto2);
+		Singleton singleton = context.getBean("singleton", Singleton.class);
+		Prototype prototype1 = singleton.createPrototype();
+		Prototype prototype2 = singleton.createPrototype();
+		
+		System.out.println((prototype1 == prototype2) ? "Same Instance":"Separate Instances");
 	}
 
 }
